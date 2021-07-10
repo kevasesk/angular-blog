@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server111111",
+      "desc": "Desc1",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "json-server2",
+      "desc": "Desc2",
+      "author": "typicode1"
+    },
+    {
+      "id": 3,
+      "title": "json-server3",
+      "desc": "Desc3",
+      "author": "typicode2"
+    }
+  ]
+}

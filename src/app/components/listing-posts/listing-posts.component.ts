@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from "../../models/post";
+import { PostsService } from "../../services/posts.service";
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-listing-posts',
@@ -6,23 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listing-posts.component.css']
 })
 export class ListingPostsComponent implements OnInit {
+  posts : Post[] = [];
 
-  posts = [
-    {
-      title: 'Quote',
-      desc: 'The system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, ',
-      author: 'Arthur'
-    },
-    {
-      title: 'Quote',
-      desc: 'Circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"',
-      author: 'Lisa'
-    },
-  ]
+  constructor(private taskService : PostsService) {
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
+    this.taskService.getPosts().subscribe(
+      (posts) => this.posts = posts
+    );
   }
 
 }
