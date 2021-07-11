@@ -1,0 +1,15 @@
+<tr>
+  <th scope="row">{{post.id}}</th>
+
+  <td [hidden]="editState" >{{post.title}}</td>
+  <td [hidden]="editState" >{{post.desc}}</td>
+  <td [hidden]="editState" >{{post.author}}</td>
+
+  <td [hidden]="!editState" ><input type="text" value="{{post.title}}" name="title" [(ngModel)]="title"/></td>
+  <td [hidden]="!editState" ><input type="text" value="{{post.desc}}" name="desc" [(ngModel)]="desc"/></td>
+  <td [hidden]="!editState" ><input type="text" value="{{post.author}}" name="author" [(ngModel)]="author"/></td>
+
+  <td [hidden]="editState" ><button type="button" class="btn btn-primary" (click)="onEdit(post)">Edit</button></td>
+  <td [hidden]="!editState" ><button type="button" class="btn btn-success" (click)="onSaveEdit(post)">Save</button></td>
+  <td><button type="button" class="btn btn-danger" (click)="onDelete(post)" >Delete</button></td>
+</tr>

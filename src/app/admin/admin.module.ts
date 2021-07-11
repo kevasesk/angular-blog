@@ -1,26 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule } from "@angular/forms";
 
 import { NavComponent } from './components/nav/nav.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import { PagesComponent } from './components/pages/pages.component';
 import { PostsComponent } from './components/posts/posts.component';
+import { PostComponent } from './components/post/post.component';
+import { AddPostComponent } from './components/add-post/add-post.component';
 
 
 @NgModule({
   declarations: [
     NavComponent,
     DashboardComponent,
-    ContactUsComponent,
-    PagesComponent,
-    PostsComponent
+    PostsComponent,
+    PostComponent,
+    AddPostComponent
   ],
   imports: [
     CommonModule,
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ]
 })
 export class AdminModule { }

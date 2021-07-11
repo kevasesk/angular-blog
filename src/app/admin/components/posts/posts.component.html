@@ -3,7 +3,26 @@
     <backend-nav></backend-nav>
   </div>
   <div class="col-10">
-    <p>posts works!</p>
+    <button type="button" class="btn btn-success" (click)="addNew()">Add New</button>
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Desc</th>
+        <th scope="col">Author</th>
+
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+        <post-tr *ngFor="let post of posts"
+                  [post]="post"
+                 (onDeletePost)="deletePost(post)"
+        ></post-tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
